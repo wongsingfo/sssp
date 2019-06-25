@@ -382,7 +382,7 @@ int DataReader::parse_ss(long *sN_ad, long **source_array, char *aName)
 		{
 
 #define MAXLINE       100	/* max line length in the input file */
-// #define P_FIELDS        4       /* no of fields in problem line */
+#define P_FIELDS2        4       /* no of fields in problem line */
 #define AUX_TYPE "aux"          /* denotes auxilary file */
 #define PROBLEM_TYPE "sp"       /* name of problem type*/
 #define PROBLEM_VAR "ss"         /* single-source */
@@ -429,7 +429,7 @@ int DataReader::parse_ss(long *sN_ad, long **source_array, char *aName)
 			if (
 			/* reading problem line: type of problem, no of nodes, no of arcs */
 			sscanf(in_line, "%*c %s %s %s %ld", prA_type, pr_type, pr_var,
-					&n) != P_FIELDS
+					&n) != P_FIELDS2
 					)
 					/*wrong number of parameters in the problem line*/
 					{
