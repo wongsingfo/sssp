@@ -13,6 +13,7 @@
 #include "data_reader.h"
 #include "solver.h"
 #include "solver_spfa.h"
+#include "solver_dijkstra.h"
 #include "timer.h"
 
 int main(int argc, char **argv) {
@@ -38,7 +39,7 @@ int main(int argc, char **argv) {
 	DataReader::parse_gr(&n, &m, &nodes, &arcs, gName);
 	DataReader::parse_ss(&nQ, &source_array, aName);
 
-	Solver* solver = new SolverSpfa(n, nodes);
+	Solver* solver = new SolverDijkstra(n, nodes);
 	solver->Initialize();
 
 	Timer timer;
