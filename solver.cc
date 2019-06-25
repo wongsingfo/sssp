@@ -12,3 +12,13 @@ long long Solver::Checksum() {
 	checksum_ = dist;
 	return checksum_;
 }
+
+long long Solver::FarthestDistance() {
+	long long dist = 0;
+	for (Node* node = nodes; node < nodes + n; node++) {
+		if (node->dist > dist) {
+			dist = node->dist;
+		}
+	}
+	return dist;
+}
