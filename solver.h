@@ -20,6 +20,7 @@ public:
     long long FarthestDistance();
     static constexpr long long MODUL = (long long) 1 << 62;
     static constexpr long long Infinity = 9223372036854775807LL; // LLONG_MAX
+    long long improvements_;
 
 protected:
     int n;

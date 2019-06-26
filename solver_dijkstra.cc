@@ -65,6 +65,7 @@ void SolverDijkstra::Solve(long source_id) {
 
   current_bucket->push(std::make_pair(0, source));
   long final_n = 0;
+  long long improvements = improvements_;
   while (final_n < n) {
     while (current_bucket->empty()) {
       current_bucket++;
@@ -83,6 +84,7 @@ void SolverDijkstra::Solve(long source_id) {
         Node* next = arc->head;
         long long t_dis = current->dist + arc->len;
         if (t_dis < next->dist) {
+          improvements += 1;
           next->dist = t_dis;
 
           Bucket* next_bucket = buckets + ((t_dis >> delta_log) & buffer_mask);
@@ -92,4 +94,5 @@ void SolverDijkstra::Solve(long source_id) {
     }
   }
 
+  improvements_ = improvements;
 }

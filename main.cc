@@ -51,6 +51,8 @@ int main(int argc, char **argv) {
 	}
 	fprintf(stderr, "c Time (ave, ms): %18.2f\n",
 			timer.GetTimeMilliSeconds(nQ));
+	fprintf(stderr, "c Improvements (ave): %18.1f\n", 
+		(double) solver->improvements_ / nQ);
 
 
 	return 0;

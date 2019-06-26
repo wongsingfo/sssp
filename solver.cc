@@ -1,7 +1,10 @@
 #include "solver.h"
 
 Solver::Solver(long n, Node* nodes)
-	: n(n), nodes(nodes), checksum_(0LL) {
+	: n(n), 
+    nodes(nodes), 
+    checksum_(0LL),
+    improvements_(0LL) {
 }
 
 long long Solver::Checksum() {
