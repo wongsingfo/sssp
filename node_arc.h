@@ -20,6 +20,10 @@ struct Node {
 	Arc* first;
 	// int tStamp;
 	bool in_queue;
+
+  // used for linked list
+  Node* next;
+  Node* prev;
 };
 
 
