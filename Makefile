@@ -1,5 +1,5 @@
 CC=g++
-CCFLAGS=-std=c++11 -Wno-write-strings
+CCFLAGS=-std=c++11 -Wno-write-strings -O2
 objects:=data_reader.o timer.o solver.o solver_spfa.o solver_dijkstra.o
 
 %.o: %.cc
@@ -9,3 +9,7 @@ serial: main.cc $(objects)
 	$(CC) -o main main.cc $(objects) $(CCFLAGS)
 
 all: serial
+
+clean: 
+	rm *.o
+	rm main
