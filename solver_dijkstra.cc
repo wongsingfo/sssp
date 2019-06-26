@@ -8,7 +8,7 @@ SolverDijkstra::SolverDijkstra(long n, Node nodes[])
 }
 
 // 2 ^ log_ceiling(num) >= num
-int log_ceiling(long long num) {
+static int log_ceiling(long long num) {
   int res = 1;
   while (((long long) 1 << res) < num) {
     res += 1;
