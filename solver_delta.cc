@@ -85,6 +85,8 @@ void SolverDelta::Solve(long source_id) {
       bucket->Insert(source);
     }
 
+    #pragma omp barrier
+
     while (1) {
       int last_bucket_id = global_bucket_id + buffer_size;
       bucket = buckets + (global_bucket_id & buffer_mask);
@@ -101,12 +103,14 @@ void SolverDelta::Solve(long source_id) {
         {
           if (bucket_id < min_bucket_id) {
             min_bucket_id = bucket_id;
+            #pragma omp flush(min_bucket_id)
           }
         }
       }
 
       #pragma omp barrier
       if (min_bucket_id >= last_bucket_id) break;
+      global_bucket_id = min_bucket_id;
 
       if (bucket_id == min_bucket_id) {
         Node* current = bucket->first_node();
@@ -119,6 +123,7 @@ void SolverDelta::Solve(long source_id) {
             long long t_dis = current->dist + arc->len;
             Request req(t_dis, next);
 
+            // TODO(): local node
             queues_[next_id].enqueue(req);
           }
           current = current->next;
