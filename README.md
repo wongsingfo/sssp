@@ -4,7 +4,7 @@ Email: wongck@pku.edu.cn
 
 ## Abstract
 
-This report presents a study on the implementation for Single Source Shortest Path (SSSP) problem. In particular, we solve this problem on USA road maps data which is a part of tasks in the 9th DIMACS Challenge. We first introduce the problem and the dataset we used, and then analyze some traditional algorithms as well as their improvement. We also implements Dijkstra and ∆-stepping in serial and parallel version, respectively.
+This report presents a study on the implementations for Single Source Shortest Path (SSSP) problem. In particular, we solved the problem on USA road maps data which is a part of tasks in the 9th DIMACS Challenge. In this report, we first introduce the problem and the dataset we used, and then analyze some traditional algorithms as well as their improved versions. We also implement Dijkstra and ∆-stepping in serial and parallel version, respectively.
 
 ## 1 Introduction
 
